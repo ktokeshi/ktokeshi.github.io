@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-    background-color: #c660ba;
+    background-color: #ffffff;
     font-family: sans-serif;
 }
 
@@ -26,23 +26,31 @@ h2 {
     border-bottom: 3px dotted #301dc5;
 }
 
+li {
+    padding: 2px 0;
+}
+
+p {
+    padding: 2px 0;
+}
+
 /* リンク操作 */
 /* 通常のリンク */
 a:link {
     color: #301dc5;
 }
 /* 訪問済リンク*/
-a:visited {
+/* a:visited {
     color: #17cdd4;
-}
+} */
 /* mouse pointer is on link*/
 a:hover {
     color: #17cdd4;
 }
 /* mouse button is pushed */
-a:active {
+/* a:active {
     color: #17cdd4;
-}
+} */
 
 /* <nav class = "nav"> に含まれる <li> 全部に適用 */
 .nav li {
