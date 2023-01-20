@@ -3,15 +3,12 @@
 body {
     background-color: #ffffff;
     font-family: sans-serif;
+    margin: 0 0 0 0;
 }
 
 /* For responsive design */
 html * {
     box-sizing: border-box;
-}
-
-body {
-    margin: 0 0 0 0;
 }
 
 .wrapper {
@@ -38,6 +35,7 @@ p {
 /* 通常のリンク */
 a:link {
     color: #301dc5;
+    text-decoration: none;
 }
 /* 訪問済リンク*/
 /* a:visited {
