@@ -43,7 +43,7 @@ a:link {
 } */
 /* mouse pointer is on link*/
 a:hover {
-    color: #17cdd4;
+    color: #F0566E;
 }
 /* mouse button is pushed */
 /* a:active {
@@ -55,4 +55,17 @@ a:hover {
     display: inline-block;
     list-style-type: none;
     padding-right: 30px;
+}
+
+.contentA, .contentB{
+    width: 50%;
+    height: 200px;
+}
+
+.contentA{
+    float: left;
+}
+    
+.contentB{
+    float: right;
 }
