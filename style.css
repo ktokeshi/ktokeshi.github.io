@@ -1,34 +1,84 @@
 @charset "UTF-8";
 
+/* ------------
+    共通部分 
+------------ */
 body {
     background-color: #ffffff;
     font-family: sans-serif;
     margin: 0 0 0 0;
 }
 
-/* For responsive design */
 html * {
-    box-sizing: border-box;
+    font-size: 100%; /* 見る人の設定文字サイズ */
+    /* box-sizing: border-box; */
+}
+
+.big-bg {
+    /* background-image: url("img/https___girlydrop.com_wp-content_uploads_post_p184.jpg"); */
+    background-size: cover;
+    background-position: center top;
+}
+
+.page-title {
+    font-size: 5rem;
+    font-family: "Philosopher", serif;
+    text-transform: uppercase; /* 大文字 */
+}
+
+.home-content {
+    text-align: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+.home-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 32px 0;
+}
+
+/* ナビゲーションメニュー */
+.main-nav {
+    display: flex; /* 横並べ */
+    font-size: 1.25rem;
+    text-transform: uppercase; /* 大文字 */
+    margin-top: 34px;
+    list-style: none; /* 箇条書きの点を消去 */
+    justify-content: center;
+}
+.main-nav li {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .wrapper {
     margin: 0 auto 0 auto;
-    max-width: 960px; 
+    max-width: 1024px;
+    justify-content: center;
+    padding: 0.4%; /* For smartphone*/
+}
+
+.olrev {
+    text-align: justify; /* 両端揃え(均等割り付け) */
+    line-height: 2.0;
 }
 
 /* "border-bottom": draw lines below h2 tags */
 h2 {
     color: #301dc5;
-    font-size = 22px;
+    font-size: 22px;
     border-bottom: 3px dotted #301dc5;
-}
-
-li {
-    padding: 4px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 p {
-    padding: 4px 0;
+    line-height: 2.0;
 }
 
 /* リンク操作 */
@@ -36,36 +86,31 @@ p {
 a:link {
     color: #301dc5;
     text-decoration: none;
+    font-weight: bold;
 }
 /* 訪問済リンク*/
-/* a:visited {
-    color: #17cdd4;
-} */
+a:visited {
+    color: #D6006E;
+    font-weight: bold;
+}
 /* mouse pointer is on link*/
 a:hover {
-    color: #F0566E;
+    color: #301dc5;
+    font-weight: bold;
 }
 /* mouse button is pushed */
-/* a:active {
-    color: #17cdd4;
+a:active {
+    color: #D6006E;
+    font-weight: bold;
+}
+
+/* スマホ向け */
+/* @media (max-width: 767px) {
+    .wrapper {
+        margin: 0 8px 0 8px;
+    }
 } */
 
-/* <nav class = "nav"> に含まれる <li> 全部に適用 */
-.nav li {
-    display: inline-block;
-    list-style-type: none;
-    padding-right: 30px;
-}
-
-.contentA, .contentB{
-    width: 50%;
-    height: 200px;
-}
-
-.contentA{
-    float: left;
-}
-
-.contentB{
-    float: right;
+.ul-lecture {
+    list-style: none; /* 箇条書きの点を消去 */
 }
