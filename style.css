@@ -105,11 +105,11 @@ a:active {
 }
 
 /* スマホ向け */
-/* @media (max-width: 767px) {
+@media (max-width: 767px) {
     .wrapper {
         margin: 0 8px 0 8px;
     }
-} */
+}
 
 .ul-lecture {
     list-style: none; /* 箇条書きの点を消去 */
