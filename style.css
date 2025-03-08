@@ -103,6 +103,9 @@ a:active {
     .wrapper {
         margin: 0 8px 0 8px;
     }
+    .nav li {
+        display: block;
+    }
 }
 
 .ul-lecture {
