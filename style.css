@@ -31,13 +31,17 @@ html * {
 }
 
 /* ナビゲーションメニュー */
-.main-nav {
+.main-nav ul{
     display: flex; /* 横並べ */
-    font-size: 1.25rem;
-    text-transform: uppercase; /* 大文字 */
+    /* font-size: 1.25rem; */
+    text-transform: uppercase; 
     margin-top: 34px;
     list-style: none; /* 箇条書きの点を消去 */
-    justify-content: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 0;
+    width: 94%;
+    max-width: 960px; 
 }
 .main-nav li {
     margin-left: auto;
