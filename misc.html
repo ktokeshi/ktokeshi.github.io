@@ -32,7 +32,7 @@
     <!-- ------------------------------ -->
 
     <main id="" class="wrapper">
-        <h2>GRAPH</h2>
+        <h2>DAILY WEIGHT</h2>
         <canvas id="chart" width="900" height="450"></canvas>
         
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -77,7 +77,7 @@
               data: {
                 labels: dates,
                 datasets: [{
-                  label: "体重 (kg)",
+                  label: "WEIGHT [kg]",
                   data: weights,
                   borderWidth: 2,
                   tension: 0.25
@@ -86,8 +86,8 @@
               options: {
                 plugins: { legend: { display: false }},
                 scales: {
-                  x: { title: { display: true, text: "日付" }},
-                  y: { title: { display: true, text: "kg" }}
+                  x: { title: { display: true, text: "DATE" }},
+                  y: { title: { display: true, text: "WEIGHT [KG]" }}
                 }
               }
             });
