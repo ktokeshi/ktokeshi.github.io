@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Misc - Koki Tokeshi's Homepage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="big-bg">
+        <header id="home" class="header wrapper home-content">
+            <div class="wrapper">
+                <h1 class="page-title">Misc</h1>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="paper.html">Papers</a></li>
+                    <li><a href="presentation.html">Talks</a></li>
+                    <li><a href="grant.html">Grants</a></li>
+                    <li><a href="lecture.html">Lecture</a></li>
+                    <li><a href="misc.html">Misc</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- ------------------------------ -->
+
+    <main id="" class="wrapper">
+        <h2>GRAPH</h2>
+        <canvas id="chart" width="900" height="450"></canvas>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
+        <script>
+        const SHEET_ID = "★★ここにID★★";
+        const URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
+        
+        fetch(URL)
+          .then(res => res.text())
+          .then(text => {
+            // Google Sheets → JSON化
+            const json = JSON.parse(text.substring(47, text.length - 2));
+            const rows = json.table.rows;
+        
+            let dates = [];
+            let weights = [];
+        
+            rows.forEach(r => {
+              if (r.c[0] && r.c[1]) {
+        
+                // --- Date(YYYY,MM,DD) をパース ---
+                const match = r.c[0].v.match(/Date\((\d+),(\d+),(\d+)\)/);
+                if (match) {
+                  const year = Number(match[1]);
+                  const month = Number(match[2]); // Google → 0始まり
+                  const day = Number(match[3]);
+                  const dateObj = new Date(year, month, day);
+        
+                  // 表示用フォーマット（YYYY-MM-DD）
+                  dates.push(dateObj.toISOString().split("T")[0]);
+                }
+        
+                // --- 体重数値 ---
+                weights.push(Number(r.c[1].v));
+              }
+            });
+        
+            // --- Chart.js描画 ---
+            new Chart(document.getElementById("chart"), {
+              type: "line",
+              data: {
+                labels: dates,
+                datasets: [{
+                  label: "体重 (kg)",
+                  data: weights,
+                  borderWidth: 2,
+                  tension: 0.25
+                }]
+              },
+              options: {
+                plugins: { legend: { display: false }},
+                scales: {
+                  x: { title: { display: true, text: "日付" }},
+                  y: { title: { display: true, text: "kg" }}
+                }
+              }
+            });
+          })
+          .catch(err => console.error("読み込み失敗:", err));
+        </script>
+    </main>
+</body>
+
+</html>
